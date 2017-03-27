@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchLists } from '../actions/index';
+import { fetchLists } from '../actions';
+import { Link } from 'react-router-dom';
 
 
 class Lists extends Component {
-	// componentWillMount() {
-	// 	this.props.fetchLists();
-	// }
 	renderLists() {
 		return this.props.lists.map((list) => {
 			return (
-				<li className="list-group-item" key={list.pid}>
-					<span className="pull-xs-right">{list.date}</span>
-					<strong>{list.title}</strong>
-				</li>
+				<Link to={"/lists/" + list.pid} key={list.pid} >
+					<li className="list-group-item">
+						<span className="pull-xs-right">{list.date}</span>
+						<strong>{list.title}</strong>
+					</li>
+				</Link>
 			)
 		})
 	}
@@ -21,7 +21,6 @@ class Lists extends Component {
 	render() {
 		return (
 			<div>
-				<h3>Items will be shown here on search</h3>
 				<ul className="list-group">
 					{this.renderLists()}
 				</ul>

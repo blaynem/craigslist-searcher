@@ -40,6 +40,7 @@ class SearchBar extends Component {
 		const { citySelect, categorySelect, term } = this.state;
 		// console.log(this.state.term, this.state.citySelect, this.state.categorySelect);
 		this.props.fetchLists(citySelect, categorySelect, term);
+		// this sets the search bar back to blank, to show the user they actually searched for something
 		this.setState({ term: '' });
 	}
 
