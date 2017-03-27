@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchLists } from '../actions';
 import { Link } from 'react-router-dom';
-
+import { getUrlParams } from '../functions/get_url';
 
 class Lists extends Component {
 	renderLists() {
 		return this.props.lists.map((list) => {
+			getUrlParams(list.url)
 			return (
 				<Link to={"/lists/" + list.pid} key={list.pid} >
 					<li className="list-group-item">

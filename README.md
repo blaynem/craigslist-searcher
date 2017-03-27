@@ -22,8 +22,11 @@ After a few seconds, the information will load.
 
 ## Difficulties and things learned.
 
+One weird problem was how craigslist uses urls. Some of them have county codes on them, others do not. So I had to come up with a way to figure out how I would gather the correct urls.
+
 AWS Lambda is cool af. Way easier than spinning up a server. Especially for a front end engineer without much back end experience. 11/10 would use again. Thanks to my roommate, without him, figuring out AWS/Lambda would have taken a lot longer.
 
 Redux is one crazy beast. It's taken a lot of trying to figure out exactly how it works, but I'm starting to get the grasp on it. Thankfully watching a ton of redux videos has given me enough information to have a better grasp on it.
 
+## Thanks
 Also thanks to everyone in the Reactiflux discord chat who helped.
