@@ -33,7 +33,7 @@ export function fetchDetails(city, category, pid, county) {
 	if (county === undefined){
 		var request = axios.get(`${DETAILS_ROOT_URL}${detailsCity}${city}${detailsCategory}${category}${detailsPID}${pid}`);
 	} else {
-		var request = axios.get(`${DETAILS_ROOT_URL}${detailsCity}${city}${detailsCategory}${category}${detailsPID}${pid}${detailsCounty}${county}`);
+		request = axios.get(`${DETAILS_ROOT_URL}${detailsCity}${city}${detailsCategory}${category}${detailsPID}${pid}${detailsCounty}${county}`);
 	}
 	
 
