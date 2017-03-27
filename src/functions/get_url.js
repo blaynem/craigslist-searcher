@@ -1,8 +1,10 @@
 export function getUrlParams(url) {
+	// splits the url at the '/' mark
 	function urlSplit(toSplit, charTo){
  	 return toSplit.split(charTo);
 	}
-
+	// then goes through and returns it in an array we
+	// can parse through correctly
   function hasCounty(urlparams) {
     if (/\d/.test(urlparams[4]) === true){
       var city = urlSplit(urlparams[2], '.')[0];
