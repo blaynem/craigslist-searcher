@@ -11,7 +11,7 @@ const App = () => (
   <div>
     <SearchBar />
     <Route exact path="/" component={Lists}/>
-    <Route path="/lists/:city/:pid/:county" component={ListItem} />
+    <Route path="/lists/:city/:categoryId/:pid/:county?" component={ListItem} />
   </div>
 )
         // <h2><Link to="/">Home</Link></h2>
