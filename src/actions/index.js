@@ -30,7 +30,12 @@ const detailsCategory = '&category=';
 const detailsPID = '&urlnums=';
 
 export function fetchDetails(city, category, pid, county) {
-	const request = axios.get(`${DETAILS_ROOT_URL}${detailsCity}${city}${detailsCategory}${category}${detailsPID}${pid}${detailsCounty}${county}`);
+	if (county === undefined){
+		var request = axios.get(`${DETAILS_ROOT_URL}${detailsCity}${city}${detailsCategory}${category}${detailsPID}${pid}`);
+	} else {
+		var request = axios.get(`${DETAILS_ROOT_URL}${detailsCity}${city}${detailsCategory}${category}${detailsPID}${pid}${detailsCounty}${county}`);
+	}
+	
 
 	return {
 		type: FETCH_DETAILS,

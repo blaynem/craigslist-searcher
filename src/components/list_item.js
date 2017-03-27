@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import { fetchListItem } from '../actions'
-import { match } from 'react-router';
+import { connect } from 'react-redux';
+import { fetchDetails } from '../actions';
 
 class ListItem extends Component {
+	componentWillMount() {
+		const { city, categoryId, pid, county } = this.props.match.params;
+		this.props.fetchDetails(city, categoryId, pid, county);
+	}
 
 	render() {
-		// const { match } = this.props;
+		if (!this.props.details){
+			return <div>Loading...</div>
+		}
+
+		const { pid, postedAt, replyUrl, title, url } = this.props.details;
+
 		return (
 			<div>
-				<h2>{JSON.stringify(this.props.match)}</h2>
+				<p>{pid}</p>
+				<p>{postedAt}</p>
+				<p>{replyUrl}</p>
+				<p>{title}</p>
+				<p>{url}</p>
 			</div>
 		)
 	}
 }
 
+function mapStateToProps(state) {
+	return { details: state.lists.list }
+}
 
-export default ListItem;
+export default connect(mapStateToProps, { fetchDetails })(ListItem);
