@@ -13,6 +13,7 @@ After a few seconds, the information will load.
 
 ## Todo
 
+- Finish adding the rest of the states, cities, and correct city codes.. woo.
 - General styling is still to be updated. I just wanted the functionality up and running.
 - Adding in the ability to click and move to a more detailed view of the specific listing.
 - Figuring out how to get the contact information specifically
@@ -23,6 +24,8 @@ After a few seconds, the information will load.
 ## Difficulties and things learned.
 
 One weird problem was how craigslist uses urls. Some of them have county codes on them, others do not. So I had to come up with a way to figure out how I would gather the correct urls.
+
+Figuring out how to format the data for every specific state/city combo and parse it correctly took a bit of work. But once i got it figured out, it went pretty smoothly after that.
 
 AWS Lambda is cool af. Way easier than spinning up a server. Especially for a front end engineer without much back end experience. 11/10 would use again. Thanks to my roommate, without him, figuring out AWS/Lambda would have taken a lot longer.
 

@@ -1,4 +1,4 @@
-const states = [
+const States = [
 	{
 		state: "alabama",
 		cities: {
@@ -188,3 +188,5 @@ const states = [
 		}
 	}
 ]
+
+export default States;

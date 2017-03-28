@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchLists } from '../actions';
+import States from '../data/states';
 
 class SearchBar extends Component {
 	constructor(props) {
@@ -9,7 +10,7 @@ class SearchBar extends Component {
 
 		// change citySelect/categorySelect value based on whatever the first selecter is
 		// otherwise if the user does not change their selection, the value will be undefined
-		this.state = { term: '', stateSelect:'Florida', citySelect: 'Miami', categorySelect: 'ggg'};
+		this.state = { term: '', stateSelect:'alabama', citySelect: 'auburn', categorySelect: 'ggg'};
 		this.onInputChange = this.onInputChange.bind(this);
 		this.onStateSelect = this.onStateSelect.bind(this);
 		this.onCitySelect = this.onCitySelect.bind(this);
@@ -44,10 +45,26 @@ class SearchBar extends Component {
 		event.preventDefault();
 
 		const { stateSelect, citySelect, categorySelect, term } = this.state;
-		// this.props.fetchLists(citySelect, categorySelect, term);
-		console.log(stateSelect, citySelect, categorySelect, term);
+		this.props.fetchLists(citySelect, categorySelect, term);
+		// console.log(stateSelect, citySelect, categorySelect, term);
 		// this sets the search bar back to blank, to show the user they actually searched for something
 		this.setState({ term: '' });
+	}
+
+	// allows you to render the options list with all states from data/states.js
+	renderStateSelectors = () => States.map(item => <option value={item.state} key={item.state}>{item.state}</option>)
+
+	// this will render all of the cities of the specified state(USA, not redux).
+	// if you choose a different state, diferent cities will load.
+	// it also gives it the correct city code for craigslist to accept.
+	renderCitySelectors() {
+		return States.map((items) => {
+			if (this.state.stateSelect == items.state){
+				return Object.keys(items.cities).map((item) => {
+					return <option value={items.cities[item]}>{item}</option>
+				})
+			}
+		})
 	}
 
 	// will need to refactor in all available cities and categories later, to make it look more pretty
@@ -60,9 +77,7 @@ class SearchBar extends Component {
 						className="form-control"
 						value={this.state.stateSelect}
 						onChange={this.onStateSelect} >
-						<option value="Florida">Florida</option>
-						<option value="Colorado">Colorado</option>
-						<option value="Oregon">Oregon</option>
+						{this.renderStateSelectors()}
 					</select>
 				</div>
 
@@ -72,9 +87,7 @@ class SearchBar extends Component {
 						className="form-control"
 						value={this.state.citySelect}
 						onChange={this.onCitySelect} >
-						<option value="Miami">Miami</option>
-						<option value="Denver">Denver</option>
-						<option value="Portland">Portland</option>
+						{this.renderCitySelectors()}
 					</select>
 				</div>
 
