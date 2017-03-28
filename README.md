@@ -2,6 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The search runs from AWS' Lambda, and Amazons API Gateway.
 
+I created this to ideally search through all of craigslist at the click of a button. Though the load times are going to be quite awful, later on i would definitely like to cache all the infromation and store it on AWS. Maybe scanning CL every hour? 
+
 ## Try it out
 
 Clone or download this rep. Inside of the folder directory, run `npm install` and then run `npm start`. Your browser should open to a localhost, and you'll be able to search.
@@ -35,6 +37,8 @@ Redux is one crazy beast. It's taken a lot of trying to figure out exactly how i
 
 - If you change the state you want to search, but do not click to change the city, it will not update correctly. i.e. I would like to search boulder colorado. On initial load State: alabama, city: auburn. If I change the state to colorado, boulder is the first city. I didn't actually have to click and change to boulder. so now if you press search, it will be the previous city, auburn.
 - Similar bug for category/subcategory. Will need to find a way to make it switch to the first item.
+- After searching, then selecting to open a listing for more details. And then trying to make another search, the user will stay on the detail page and not be redirected. Not sure what the best course of action would be for that.
+- If a user views a detailed search, then goes back to home page, then clicks a different listing - the first listing they viewed will still be there, as the new detailed information is waiting to load. Bad user experience.
 
 ## Thanks
 Also thanks to everyone in the Reactiflux discord chat who helped.

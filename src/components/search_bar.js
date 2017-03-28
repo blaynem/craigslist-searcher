@@ -50,8 +50,8 @@ class SearchBar extends Component {
 	onSearchSubmit(event) {
 		event.preventDefault();
 
-		const { citySelect, categorySelect, term, subCategorySelect } = this.state;
-		console.log(citySelect, categorySelect, term, subCategorySelect)
+		const { citySelect, term, subCategorySelect } = this.state;
+		// console.log(citySelect, categorySelect, term, subCategorySelect)
 		// fetchLists needs to be called with city, category, term in that order
 		this.props.fetchLists(citySelect, subCategorySelect, term);
 		// this sets the search bar back to blank, to show the user they actually searched for something
