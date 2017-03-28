@@ -74,6 +74,7 @@ class SearchBar extends Component {
 		})
 	}
 
+	// same thing as city render function, just for categories.
 	renderCategorySelectors = () => Categories.map(item => <option value={item.catCode} key={item.catCode}>{item.category}</option>)
 
 	renderSubCategorySelectors() {
