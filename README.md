@@ -31,5 +31,10 @@ AWS Lambda is cool af. Way easier than spinning up a server. Especially for a fr
 
 Redux is one crazy beast. It's taken a lot of trying to figure out exactly how it works, but I'm starting to get the grasp on it. Thankfully watching a ton of redux videos has given me enough information to have a better grasp on it.
 
+## Bugs
+
+- If you change the state you want to search, but do not click to change the city, it will not update correctly. i.e. I would like to search boulder colorado. On initial load State: alabama, city: auburn. If I change the state to colorado, boulder is the first city. I didn't actually have to click and change to boulder. so now if you press search, it will be the previous city, auburn.
+- Similar bug for category/subcategory. Will need to find a way to make it switch to the first item.
+
 ## Thanks
 Also thanks to everyone in the Reactiflux discord chat who helped.

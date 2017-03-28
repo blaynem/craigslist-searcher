@@ -1,8 +1,24 @@
-const categories = [
+const Categories = [
+	{
+	  category: "gigs",
+	  catCode: "ggg",
+	  codes: {
+	  	"all": "ggg",
+      computer: "cpg",
+			creative: "crg",
+			crew: "cwg",
+			domestic: "dmg",
+			event: "evg",
+			labor: "lbg",
+			talent: "tlg",
+			writing: "wrg"
+	  }
+	},
 	{
     category: "housing",
     catCode: "hhh",
     codes: {
+    	"all": "hhh",
       "apts & housing": "apa",
 			"housing swap": "swp",
 			"housing wanted": "hsw",
@@ -15,24 +31,11 @@ const categories = [
 			"vacation rentals": "vac"
   	}
   },
-  {
-	  category: "gigs",
-	  catCode: "ggg",
-	  codes: {
-      computer: "cpg",
-			creative: "crg",
-			crew: "cwg",
-			domestic: "dmg",
-			event: "evg",
-			labor: "lbg",
-			talent: "tlg",
-			writing: "wrg"
-	  }
-	},
 	{
 	  category: "jobs",
 	  catCode: "jjj",
 	  codes: {
+	  	"all": "jjj",
       "accounting & finance": "acc",
 			"admin & office": "ofc",
 			"arch & engineering": "egr",
@@ -71,6 +74,7 @@ const categories = [
 	  category: "services",
 	  catCode: "bbb",
 	  codes: {
+	  	"all": "bbb",
 			"automotive": "aos",
 			"beauty": "bts",
 			"cell & mobile": "cms",
@@ -95,3 +99,5 @@ const categories = [
 	  }
 	}
 ]
+
+export default Categories;
