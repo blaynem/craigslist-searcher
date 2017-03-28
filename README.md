@@ -4,6 +4,8 @@ The search runs from AWS' Lambda, and Amazons API Gateway.
 
 I created this to ideally search through all of craigslist at the click of a button. Though the load times are going to be quite awful, later on i would definitely like to cache all the infromation and store it on AWS. Maybe scanning CL every hour? 
 
+If you'd like an easier to use/view version of craigslists shortcodes, feel free to check out my [google doc here](https://docs.google.com/spreadsheets/d/10DDDBwybk4C2g5OkHZ56J-6it0c4n6IJPV06lyUFWac/edit?usp=sharing). 
+
 ## Try it out
 
 Clone or download this rep. Inside of the folder directory, run `npm install` and then run `npm start`. Your browser should open to a localhost, and you'll be able to search.
