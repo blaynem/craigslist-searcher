@@ -8,7 +8,7 @@ If you'd like an easier to use/view version of craigslists shortcodes, feel free
 
 ## Try it out
 
-Clone or download this rep. Inside of the folder directory, run `npm install` and then run `npm start`. Your browser should open to a localhost, and you'll be able to search.
+Clone or download this rep. Inside of the folder directory, run `npm install` and then run `npm start`. Your browser should open to a localhost, and you'll be able to search. (Unfortunately, google chrome blocks your CORS, so you won't be able to search from your localhost unless you allow them. You can use [this extension](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-app-launcher-info-dialog) to allow them. Or just wait until I host the app soon.)
 
 ### To use
 
