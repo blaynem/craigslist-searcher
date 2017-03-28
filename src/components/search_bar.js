@@ -9,7 +9,7 @@ class SearchBar extends Component {
 
 		// change citySelect/categorySelect value based on whatever the first selecter is
 		// otherwise if the user does not change their selection, the value will be undefined
-		this.state = { term: '', citySelect: 'Fargo', categorySelect: 'ggg'};
+		this.state = { term: '', citySelect: 'Miami', categorySelect: 'ggg'};
 		this.onInputChange = this.onInputChange.bind(this);
 		this.onCitySelect = this.onCitySelect.bind(this);
 		this.onCategorySelect = this.onCategorySelect.bind(this);
@@ -21,14 +21,14 @@ class SearchBar extends Component {
 		this.setState({ term: event.target.value });
 	}
 
-	// this sets the state of the city selector
-	onCitySelect(event) {
-		this.setState({ citySelect: event.target.value });
-	}
-
 	// this sets the state of the category select
 	onCategorySelect(event) {
 		this.setState({ categorySelect: event.target.value });
+	}
+
+	// this sets the state of the city selector
+	onCitySelect(event) {
+		this.setState({ citySelect: event.target.value });
 	}
 
 	// this will submit the search for whatever term, city, and category the user wants
@@ -52,7 +52,7 @@ class SearchBar extends Component {
 					className="form-control"
 					value={this.state.citySelect}
 					onChange={this.onCitySelect} >
-					<option value="Fargo">Fargo</option>
+					<option value="Miami">Miami</option>
 					<option value="Denver">Denver</option>
 					<option value="Portland">Portland</option>
 				</select>
