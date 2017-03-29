@@ -29,6 +29,7 @@ const detailsCounty ='&county=';
 const detailsCategory = '&category=';
 const detailsPID = '&urlnums=';
 
+// craigslists urls sometimes contain a county, so this will use a different url depending on if a county was passed in or not
 export function fetchDetails(city, category, pid, county) {
 	if (county === undefined){
 		var request = axios.get(`${DETAILS_ROOT_URL}${detailsCity}${city}${detailsCategory}${category}${detailsPID}${pid}`);
