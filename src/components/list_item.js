@@ -13,14 +13,24 @@ class ListItem extends Component {
 			return <div>Loading...</div>
 		}
 
-		const { pid, postedAt, replyUrl, title, url } = this.props.details;
+		const { pid, postedAt, replyUrl, title, url, description,updatedAt } = this.props.details;
 
 		return (
-			<div>
+			<div className="container">
+				<div className="row">
+					<p>{replyUrl}</p>
+				</div>
+				<div className="row">
+					<p>{postedAt}</p>
+					<p>{updatedAt}</p>
+				</div>
+				<div className="row">
+					<h2>{title}</h2>
+				</div>
+				<div className="row">
+					<h3>{description}</h3>
+				</div>
 				<p>{pid}</p>
-				<p>{postedAt}</p>
-				<p>{replyUrl}</p>
-				<p>{title}</p>
 				<p>{url}</p>
 			</div>
 		)

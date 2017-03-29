@@ -23,27 +23,17 @@ class Lists extends Component {
 
 	// maps through all the data gathered from the craigslist site and then places it in
 	// a prettier and more functional view
-	// renderLists() {
-	// 	return this.props.lists.map((list) => {
-	// 		return (
-	// 			<Link to={this.urlParams(list.url)} key={list.pid} >
-	// 				<li className="list-group-item">
-	// 					<span className="pull-xs-right">{list.date}</span>
-	// 					<strong>{list.title}</strong>
-	// 				</li>
-	// 			</Link>
-	// 		)
-	// 	})
-	// }
-
-	//here to test look of app
 	renderLists() {
-		return ["1", "2", "3"].map((list) => {
+		return this.props.lists.map((list) => {
 			return (
-				<Link to="test" key={list} >
-					<li className="list-group-item">
-						<span className="pull-xs-right">12/06/2017</span>
-						<strong>This is a title tester yes sir.</strong>
+				<Link to={this.urlParams(list.url)} key={list.pid} className="lists">
+					<li className="list-group-item col-sm-6">
+						<div className="row">
+							<p className="pull-xs-right">Posted {list.date}</p>
+						</div>
+						<div className="row">
+							<h4>{list.title}</h4>
+						</div>
 					</li>
 				</Link>
 			)
