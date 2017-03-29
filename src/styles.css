@@ -1,3 +1,4 @@
+/*the entire listings lists*/
 .lists {
 	color: black;
 	text-transform: capitalize;
@@ -22,11 +23,53 @@
 	text-align: center;
 }
 
+/*entire listing container*/
 .container {
+	margin-top: 25px;
 	padding: 30px;
 	border: 3px solid lightgray;
 }
 
-.container .row > p{
-	/*border: 1px solid red;*/
+/*how to reply to specific posting*/
+.replyUrl span{
+	font-weight: bold;
+}
+
+/*when listing was posted/updated*/
+.posteds p{
+	text-align: right;
+	margin: 0;
+}
+
+.posteds span {
+	font-weight: bold;
+}
+
+/*title of specific listing*/
+.titles {
+	margin: 15px 0;
+}
+
+.titles h2 {
+	font-size: 2em;
+	border-bottom: 2px solid lightgray;
+	text-align: center;
+}
+
+/*descriptions of specific listings*/
+.descriptions {
+	margin: 15px 0;
+}
+
+.descriptions h3 {
+	font-size: 1.3em;
+}
+
+/*postid styles*/
+.postId {
+	text-align: right;
+}
+
+.postId span{
+	font-weight: bold;
 }

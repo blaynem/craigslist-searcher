@@ -27,7 +27,7 @@ class Lists extends Component {
 		return this.props.lists.map((list) => {
 			return (
 				<Link to={this.urlParams(list.url)} key={list.pid} className="lists">
-					<li className="list-group-item col-sm-6">
+					<li className="list-group-item col-sm-offset-1 col-sm-10">
 						<div className="row">
 							<p className="pull-xs-right">Posted {list.date}</p>
 						</div>
