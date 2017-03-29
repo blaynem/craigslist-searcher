@@ -42,7 +42,7 @@ class Lists extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="row">
 				<ul className="list-group">
 					{this.renderLists()}
 				</ul>

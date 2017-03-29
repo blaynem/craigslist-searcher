@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchDetails } from '../actions';
-import { Link } from 'react-router-dom';
 
 class ListItem extends Component {
 	componentWillMount() {
@@ -16,37 +15,46 @@ class ListItem extends Component {
 
 	render() {
 		if (!this.props.details){
-			return <div>Loading...</div>
+			return (
+				<div className="row">
+					<div className="col-sm-offset-1 col-sm-10 loading">
+						<h3>Loading...</h3>
+					</div>	
+				</div>
+			)
 		}
 
 		const { pid, postedAt, replyUrl, title, url, description,updatedAt } = this.props.details;
 
 		return (
-			<div className="container">
-				<div className="row">
-					<div className="col-sm-6 replyUrl">
-						<span>Reply Here: </span>
-						<Link to={replyUrl}>{replyUrl}</Link>
+
+			<div className="row">
+				<div className="col-sm-offset-1 col-sm-10 listingDetails">
+					<div className="row">
+						<div className="col-sm-6 replyUrl">
+							<span>Reply Here: </span>
+							<a target="_blank" href={replyUrl}>{replyUrl}</a>
+						</div>
+						<div className="col-sm-6 posteds">
+							<p><span>Last Updated:</span> {updatedAt}</p>
+							<p><span>Originally Posted:</span> {postedAt}</p>
+						</div>
 					</div>
-					<div className="col-sm-6 posteds">
-						<p><span>Last Updated:</span> {updatedAt}</p>
-						<p><span>Originally Posted:</span> {postedAt}</p>
+					<div className="row">
+						<div className="col-sm-12 titles">
+							<h2>{title}</h2>
+						</div>
+						<div className="col-sm-12 descriptions">
+							{this.renderCleanDescription(description)}
+						</div>
 					</div>
-				</div>
-				<div className="row">
-					<div className="col-sm-12 titles">
-						<h2>{title}</h2>
-					</div>
-					<div className="col-sm-12 descriptions">
-						{this.renderCleanDescription(description)}
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-sm-6 urlLink">
-						<Link to={url}><p>{url}</p></Link>
-					</div>
-					<div className="col-sm-6 postId">
-						<p><span>Post Id:</span> {pid}</p>
+					<div className="row">
+						<div className="col-sm-6 urlLink">
+							<a target="_blank" href={url}><p>{url}</p></a>
+						</div>
+						<div className="col-sm-6 postId">
+							<p><span>Post Id:</span> {pid}</p>
+						</div>
 					</div>
 				</div>
 			</div>

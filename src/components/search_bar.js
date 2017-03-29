@@ -90,58 +90,69 @@ class SearchBar extends Component {
 	// will need to refactor in all available cities and categories later, to make it look more pretty
 	render() {
 		return (
-			<form onSubmit={this.onSearchSubmit} className="input-group">
-				<div className="form-group">
-					<label style={{backgroundColor:"red"}}>States</label>
-					<select 
-						className="form-control"
-						value={this.state.stateSelect}
-						onChange={this.onStateSelect} >
-						{this.renderStateSelectors()}
-					</select>
+			<div className="row">
+			<form onSubmit={this.onSearchSubmit} className="col-sm-offset-1 col-sm-10">
+				<div className="row">
+					<div className="form-group col-sm-6">
+						<label>States:</label>
+						<select 
+							className="form-control"
+							value={this.state.stateSelect}
+							onChange={this.onStateSelect} >
+							{this.renderStateSelectors()}
+						</select>
+					</div>
+
+					<div className="form-group col-sm-6">
+						<label>City:</label>
+						<select 
+							className="form-control"
+							value={this.state.citySelect}
+							onChange={this.onCitySelect} >
+							{this.renderCitySelectors()}
+						</select>
+					</div>
 				</div>
 
-				<div className="form-group">
-					<label style={{backgroundColor:"red"}}>City</label>
-					<select 
-						className="form-control"
-						value={this.state.citySelect}
-						onChange={this.onCitySelect} >
-						{this.renderCitySelectors()}
-					</select>
+				<div className="row">
+					<div className="form-group col-sm-6">
+						<label>Category Select:</label>
+						<select
+							className="form-control"
+							value={this.state.categorySelect}
+							onChange={this.onCategorySelect} >
+							{this.renderCategorySelectors()}
+						</select>
+					</div>
+
+					<div className="form-group col-sm-6">
+						<label>Sub Category Select:</label>
+						<select
+							className="form-control"
+							value={this.state.subCategorySelect}
+							onChange={this.onSubCategorySelect} >
+							{this.renderSubCategorySelectors()}
+						</select>
+					</div>
 				</div>
 
-				<div className="form-group">
-					<label style={{backgroundColor:"red"}}>Category Select</label>
-					<select
+				<div className="row">
+				<div className="col-sm-offset-2 col-sm-8">
+					<div className="input-group">
+					<input 
+						type="text"
+						placeholder="search term"
 						className="form-control"
-						value={this.state.categorySelect}
-						onChange={this.onCategorySelect} >
-						{this.renderCategorySelectors()}
-					</select>
+						value={this.state.term}
+						onChange={this.onInputChange}/>
+					<span className="input-group-btn">
+						<button type="submit" className="btn btn-secondary">Submit</button>
+					</span>
+					</div>
 				</div>
-
-				<div className="form-group">
-					<label style={{backgroundColor:"red"}}>Sub Category Select</label>
-					<select
-						className="form-control"
-						value={this.state.subCategorySelect}
-						onChange={this.onSubCategorySelect} >
-						{this.renderSubCategorySelectors()}
-					</select>
 				</div>
-
-				<input 
-					placeholder="search term"
-					className="form-control"
-					value={this.state.term}
-					onChange={this.onInputChange}
-					/>
-
-				<span className="input-group-btn">
-					<button type="submit" className="btn btn-secondary">Submit</button>
-				</span>
 			</form>
+			</div>
 		)
 	}
 }
