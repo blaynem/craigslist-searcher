@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchDetails } from '../actions';
 
 class ListItem extends Component {
-	componentWillMount() {
+	componentDidMount() {
 		const { city, categoryId, pid, county } = this.props.match.params;
 		this.props.fetchDetails(city, categoryId, pid, county);
 	}
