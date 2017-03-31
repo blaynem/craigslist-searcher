@@ -72,8 +72,8 @@ class SearchBar extends Component {
 
 		const { citySelect, term, subCategorySelect } = this.state;
 		// fetchLists needs to be called with city, category, term in that order
-		console.log(citySelect, subCategorySelect, term);
-		// this.props.fetchLists(citySelect, subCategorySelect, term);
+		// console.log(citySelect, subCategorySelect, term);
+		this.props.fetchLists(citySelect, subCategorySelect, term);
 		// this sets the search bar back to blank, to show the user they actually searched for something
 		this.setState({ term: '' });
 	}
