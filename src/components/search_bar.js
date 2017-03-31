@@ -26,7 +26,17 @@ class SearchBar extends Component {
 
 	// this sets the state of the city selector
 	onStateSelect(event) {
-		this.setState({ stateSelect: event.target.value });
+		let newCity = '';
+		// loops through all states, if it finds the correct state that's equal to selected state, sets the city
+		// to the correct city
+		States.map((items) => {
+			if ((event.target.value) === items.state){
+				newCity = (Object.keys(items.cities)[0])
+				return newCity;
+			}
+		})
+
+		this.setState({ stateSelect: event.target.value, citySelect: newCity });
 	}
 
 	// this sets the state of the city selector
@@ -36,7 +46,17 @@ class SearchBar extends Component {
 
 	// this sets the state of the category select
 	onCategorySelect(event) {
-		this.setState({ categorySelect: event.target.value });
+		let newCat = '';
+		// loops through all categories, if it finds the correct category that's equal to selected category, sets the subcategory
+		// to the correct subcategory
+		Categories.map((items) => {
+			if ((event.target.value) === items.catCode){
+				newCat = (items.catCode)
+				return newCat;
+			}
+		})
+
+		this.setState({ categorySelect: event.target.value, subCategorySelect: newCat });
 	}
 
 	// this sets the state of the category select
@@ -52,7 +72,8 @@ class SearchBar extends Component {
 
 		const { citySelect, term, subCategorySelect } = this.state;
 		// fetchLists needs to be called with city, category, term in that order
-		this.props.fetchLists(citySelect, subCategorySelect, term);
+		console.log(citySelect, subCategorySelect, term);
+		// this.props.fetchLists(citySelect, subCategorySelect, term);
 		// this sets the search bar back to blank, to show the user they actually searched for something
 		this.setState({ term: '' });
 	}
@@ -105,7 +126,6 @@ class SearchBar extends Component {
 					<div className="form-group col-sm-6">
 						<label>City:</label>
 						<select
-							name="citySelector"
 							className="form-control"
 							value={this.state.citySelect}
 							onChange={this.onCitySelect} >

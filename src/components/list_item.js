@@ -11,7 +11,8 @@ class ListItem extends Component {
 
 	// Just trying to make the description read a little more cleanly.
 	renderCleanDescription(e){
-		return e.split(". ").map((item, i) => {return <h3 key={i}>{item}.</h3>})
+		return e
+		// return e.split(". ").map((item, i) => {return <h3 key={i}>{item}.</h3>})
 	}
 
 	render() {
