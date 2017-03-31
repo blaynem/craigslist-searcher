@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+You can test it out [here](https://craigslist-searcher-app.herokuapp.com/).
+
 The search runs from AWS' Lambda, and Amazons API Gateway.
 
 I created this to ideally search through all of craigslist at the click of a button. Though the load times are going to be quite awful, later on i would definitely like to cache all the infromation and store it on AWS. Maybe scanning CL every hour? 
@@ -8,7 +10,7 @@ If you'd like an easier to use/view version of craigslists shortcodes, feel free
 
 ## Try it out
 
-Clone or download this rep. Inside of the folder directory, run `npm install` and then run `npm start`. Your browser should open to a localhost, and you'll be able to search. (Unfortunately, google chrome blocks your CORS, so you won't be able to search from your localhost unless you allow them. You can use [this extension](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-app-launcher-info-dialog) to allow them. Or just wait until I host the app soon.)
+Clone or download this rep. Inside of the folder directory, run `npm install` and then run `npm start`. Your browser should open to a localhost, and you'll be able to search. Or visit the link above.
 
 ### To use
 
@@ -18,8 +20,10 @@ After a few seconds, the information will load.
 ## Todo
 
 - Finish adding the rest of the states, cities, and correct city codes.. woo.
-- General styling is still to be updated. I just wanted the functionality up and running.
-- Adding in the ability to click and move to a more detailed view of the specific listing.
+- ~~General styling is still to be updated. I just wanted the functionality up and running.~~
+- Fix styling for Mobile.
+- Update styling and make it beautiful.
+- ~~Adding in the ability to click and move to a more detailed view of the specific listing.~~
 - Figuring out how to get the contact information specifically
 - Making it work faster.
 - Searching all of craigslist, hopefully this isn't too hard.
