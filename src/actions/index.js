@@ -2,6 +2,14 @@ import axios from 'axios';
 
 export const FETCH_LISTS = 'FETCH_LISTS';
 export const FETCH_DETAILS = 'FETCH_DETAILS';
+export const CLEAR_DATA = 'CLEAR_DATA';
+
+export function clearData() {
+	return {
+		type: CLEAR_DATA
+	};
+}
+
 
 // These are for searching the entire list
 // need city argument

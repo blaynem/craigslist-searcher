@@ -51,7 +51,6 @@ class SearchBar extends Component {
 		event.preventDefault();
 
 		const { citySelect, term, subCategorySelect } = this.state;
-		// console.log(citySelect, categorySelect, term, subCategorySelect)
 		// fetchLists needs to be called with city, category, term in that order
 		this.props.fetchLists(citySelect, subCategorySelect, term);
 		// this sets the search bar back to blank, to show the user they actually searched for something
@@ -95,7 +94,7 @@ class SearchBar extends Component {
 				<div className="row">
 					<div className="form-group col-sm-6">
 						<label>States:</label>
-						<select 
+						<select
 							className="form-control"
 							value={this.state.stateSelect}
 							onChange={this.onStateSelect} >
@@ -105,7 +104,8 @@ class SearchBar extends Component {
 
 					<div className="form-group col-sm-6">
 						<label>City:</label>
-						<select 
+						<select
+							name="citySelector"
 							className="form-control"
 							value={this.state.citySelect}
 							onChange={this.onCitySelect} >

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDetails } from '../actions';
+import { fetchDetails, clearData } from '../actions';
 
 class ListItem extends Component {
 	componentDidMount() {
+		this.props.clearData();
 		const { city, categoryId, pid, county } = this.props.match.params;
 		this.props.fetchDetails(city, categoryId, pid, county);
 	}
@@ -66,4 +67,4 @@ function mapStateToProps(state) {
 	return { details: state.lists.list }
 }
 
-export default connect(mapStateToProps, { fetchDetails })(ListItem);
+export default connect(mapStateToProps, { fetchDetails, clearData })(ListItem);
