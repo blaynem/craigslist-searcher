@@ -37,7 +37,6 @@ class SearchBar extends Component {
 		})
 
 		this.setState({ stateSelect: event.target.value, citySelect: newCity });
-		console.log( this.state.stateSelect, this.state.citySelect );
 	}
 
 	// this sets the state of the city selector
