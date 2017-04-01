@@ -31,12 +31,13 @@ class SearchBar extends Component {
 		// to the correct city
 		States.map((items) => {
 			if ((event.target.value) === items.state){
-				newCity = (Object.keys(items.cities)[0])
+				newCity = (Object.values(items.cities)[0])
 				return newCity;
 			}
 		})
 
 		this.setState({ stateSelect: event.target.value, citySelect: newCity });
+		console.log( this.state.stateSelect, this.state.citySelect );
 	}
 
 	// this sets the state of the city selector
@@ -87,7 +88,7 @@ class SearchBar extends Component {
 	renderCitySelectors() {
 		return States.map((items) => {
 			if (this.state.stateSelect === items.state){
-				return Object.keys(items.cities).map((item) => {
+				return Object.keys(items.cities).map((item, i) => {
 					return <option value={items.cities[item]}>{item}</option>
 				})
 			}

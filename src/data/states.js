@@ -320,7 +320,7 @@ const States = [
 		}
 	},
 	{
-		state: "minnesota",
+		state: "mississippi",
 		cities: {
 			"gulfport biloxi": "gulfport",
 			hattiesburg: "hattiesburg",
