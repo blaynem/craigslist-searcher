@@ -29,7 +29,7 @@ class SearchBar extends Component {
 		let newCity = '';
 		// loops through all states, if it finds the correct state that's equal to selected state, sets the city
 		// to the correct city
-		States.map((items) => {
+		States.forEach((items) => {
 			if ((event.target.value) === items.state){
 				newCity = (Object.values(items.cities)[0])
 				return newCity;
@@ -49,7 +49,7 @@ class SearchBar extends Component {
 		let newCat = '';
 		// loops through all categories, if it finds the correct category that's equal to selected category, sets the subcategory
 		// to the correct subcategory
-		Categories.map((items) => {
+		Categories.forEach((items) => {
 			if ((event.target.value) === items.catCode){
 				newCat = (items.catCode)
 				return newCat;
@@ -100,11 +100,11 @@ class SearchBar extends Component {
 	renderCategorySelectors = () => Categories.map(item => <option value={item.catCode} key={item.catCode}>{item.category}</option>)
 
 	renderSubCategorySelectors() {
-		return Categories.map((items) => {
+		return Categories.map((items) =>{
 			if (this.state.categorySelect === items.catCode){
 				return Object.keys(items.codes).map((item) => {
 					return <option value={items.codes[item]}>{item}</option>
-				})
+				});
 			}
 		})
 	}
