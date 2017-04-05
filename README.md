@@ -19,8 +19,9 @@ After a few seconds, the information will load.
 
 ## Todo
 
-- Add a back button.
-- Functionality of search button in description view should work.
+- ~~Add a back button.~~
+- ~~Functionality of search button in description view should work.~~
+- Search bar is correctly redirecting back to home page, but there is slight delay for new info to show. Should clear previous data, or add it on top somehow.
 - ~~Finish adding the rest of the states, cities, and correct city codes.. woo.~~
 - ~~General styling is still to be updated. I just wanted the functionality up and running.~~
 - Fix styling for Mobile.
@@ -45,7 +46,7 @@ Redux is one crazy beast. It's taken a lot of trying to figure out exactly how i
 
 - ~~If you change the state you want to search, but do not click to change the city, it will not update correctly. i.e. I would like to search boulder colorado. On initial load State: alabama, city: auburn. If I change the state to colorado, boulder is the first city. I didn't actually have to click and change to boulder. so now if you press search, it will be the previous city, auburn.~~
 - ~~Similar bug for category/subcategory. Will need to find a way to make it switch to the first item.~~
-- After searching, then selecting to open a listing for more details. And then trying to make another search, the user will stay on the detail page and not be redirected. Not sure what the best course of action would be for that.
+- ~~After searching, then selecting to open a listing for more details. And then trying to make another search, the user will stay on the detail page and not be redirected. Not sure what the best course of action would be for that.~~
 - ~~If a user views a detailed search, then goes back to home page, then clicks a different listing - the first listing they viewed will still be there, as the new detailed information is waiting to load. Bad user experience.~~
 
 ## Thanks
