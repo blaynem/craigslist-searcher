@@ -19,6 +19,8 @@ After a few seconds, the information will load.
 
 ## Todo
 
+- Add a back button.
+- Functionality of search button in description view should work.
 - ~~Finish adding the rest of the states, cities, and correct city codes.. woo.~~
 - ~~General styling is still to be updated. I just wanted the functionality up and running.~~
 - Fix styling for Mobile.

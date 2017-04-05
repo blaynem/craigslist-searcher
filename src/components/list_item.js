@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchDetails, clearData } from '../actions';
 
 class ListItem extends Component {
@@ -29,7 +30,10 @@ class ListItem extends Component {
 		const { pid, postedAt, replyUrl, title, url, description,updatedAt } = this.props.details;
 
 		return (
-
+			<div>
+			<div className="row">
+				<Link to="/">Go Back</Link>
+			</div>
 			<div className="row">
 				<div className="col-sm-offset-1 col-sm-10 listingDetails">
 					<div className="row">
@@ -59,6 +63,7 @@ class ListItem extends Component {
 						</div>
 					</div>
 				</div>
+			</div>
 			</div>
 		)
 	}
