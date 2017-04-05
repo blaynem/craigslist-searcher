@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { withRouter } from 'react-router-dom';
 import { fetchLists } from '../actions';
 import States from '../data/states';
 import Categories from '../data/categories';
@@ -114,67 +113,67 @@ class SearchBar extends Component {
 	render() {
 		return (
 			<div className="row">
-			<form onSubmit={this.onSearchSubmit} className="col-sm-offset-1 col-sm-10">
-				<div className="row">
-					<div className="form-group col-sm-6">
-						<label>States:</label>
-						<select
-							className="form-control"
-							value={this.state.stateSelect}
-							onChange={this.onStateSelect} >
-							{this.renderStateSelectors()}
-						</select>
+				<form onSubmit={this.onSearchSubmit} className="col-sm-offset-1 col-sm-10">
+					<div className="row">
+						<div className="form-group col-sm-6">
+							<label>States:</label>
+							<select
+								className="form-control"
+								value={this.state.stateSelect}
+								onChange={this.onStateSelect} >
+								{this.renderStateSelectors()}
+							</select>
+						</div>
+
+						<div className="form-group col-sm-6">
+							<label>City:</label>
+							<select
+								className="form-control"
+								value={this.state.citySelect}
+								onChange={this.onCitySelect} >
+								{this.renderCitySelectors()}
+							</select>
+						</div>
 					</div>
 
-					<div className="form-group col-sm-6">
-						<label>City:</label>
-						<select
-							className="form-control"
-							value={this.state.citySelect}
-							onChange={this.onCitySelect} >
-							{this.renderCitySelectors()}
-						</select>
-					</div>
-				</div>
+					<div className="row">
+						<div className="form-group col-sm-6">
+							<label>Category Select:</label>
+							<select
+								className="form-control"
+								value={this.state.categorySelect}
+								onChange={this.onCategorySelect} >
+								{this.renderCategorySelectors()}
+							</select>
+						</div>
 
-				<div className="row">
-					<div className="form-group col-sm-6">
-						<label>Category Select:</label>
-						<select
-							className="form-control"
-							value={this.state.categorySelect}
-							onChange={this.onCategorySelect} >
-							{this.renderCategorySelectors()}
-						</select>
+						<div className="form-group col-sm-6">
+							<label>Sub Category Select:</label>
+							<select
+								className="form-control"
+								value={this.state.subCategorySelect}
+								onChange={this.onSubCategorySelect} >
+								{this.renderSubCategorySelectors()}
+							</select>
+						</div>
 					</div>
 
-					<div className="form-group col-sm-6">
-						<label>Sub Category Select:</label>
-						<select
-							className="form-control"
-							value={this.state.subCategorySelect}
-							onChange={this.onSubCategorySelect} >
-							{this.renderSubCategorySelectors()}
-						</select>
+					<div className="row">
+						<div className="col-sm-offset-2 col-sm-8">
+							<div className="input-group">
+							<input 
+								type="text"
+								placeholder="search term"
+								className="form-control"
+								value={this.state.term}
+								onChange={this.onInputChange}/>
+							<span className="input-group-btn">
+								<button type="submit" className="btn btn-secondary">Submit</button>
+							</span>
+							</div>
+						</div>
 					</div>
-				</div>
-
-				<div className="row">
-				<div className="col-sm-offset-2 col-sm-8">
-					<div className="input-group">
-					<input 
-						type="text"
-						placeholder="search term"
-						className="form-control"
-						value={this.state.term}
-						onChange={this.onInputChange}/>
-					<span className="input-group-btn">
-						<button type="submit" className="btn btn-secondary">Submit</button>
-					</span>
-					</div>
-				</div>
-				</div>
-			</form>
+				</form>
 			</div>
 		)
 	}
