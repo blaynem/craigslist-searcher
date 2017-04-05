@@ -100,11 +100,11 @@ class SearchBar extends Component {
 	renderCategorySelectors = () => Categories.map(item => <option value={item.catCode} key={item.catCode}>{item.category}</option>)
 
 	renderSubCategorySelectors() {
-		return Categories.map((items) =>{
+		return Categories.map((items) => {
 			if (this.state.categorySelect === items.catCode){
 				return Object.keys(items.codes).map((item) => {
 					return <option value={items.codes[item]}>{item}</option>
-				});
+				})
 			}
 		})
 	}
