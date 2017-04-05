@@ -4,6 +4,8 @@ import { fetchLists } from '../actions';
 import { Link } from 'react-router-dom';
 import { getUrlParams } from '../functions/get_url';
 
+import SearchBar from './search_bar';
+
 class Lists extends Component {
 
 	// this function takes in a url, and depending on if it has a county code or not
@@ -42,10 +44,13 @@ class Lists extends Component {
 
 	render() {
 		return (
-			<div className="row">
-				<ul className="list-group">
-					{this.renderLists()}
-				</ul>
+			<div>
+				<SearchBar searchProps={this.props}/>
+				<div className="row">
+					<ul className="list-group">
+						{this.renderLists()}
+					</ul>
+				</div>
 			</div>
 		)
 	}

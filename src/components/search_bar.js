@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 import { fetchLists } from '../actions';
 import States from '../data/states';
 import Categories from '../data/categories';
@@ -71,11 +72,13 @@ class SearchBar extends Component {
 		event.preventDefault();
 
 		const { citySelect, term, subCategorySelect } = this.state;
+		const { searchProps } = this.props;
 		// fetchLists needs to be called with city, category, term in that order
 		// console.log(citySelect, subCategorySelect, term);
 		this.props.fetchLists(citySelect, subCategorySelect, term);
 		// this sets the search bar back to blank, to show the user they actually searched for something
 		this.setState({ term: '' });
+		searchProps.history.push('/');
 	}
 
 	// allows you to render the options list with all states from data/states.js

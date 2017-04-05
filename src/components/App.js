@@ -7,7 +7,6 @@ import ListItem from './list_item';
 
 const App = () => (
   <div className="container">
-    <SearchBar />
     <Route exact path="/" component={Lists}/>
     <Route path="/lists/:city/:categoryId/:pid/:county?" component={ListItem} />
   </div>

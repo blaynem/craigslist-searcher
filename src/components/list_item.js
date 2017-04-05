@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchDetails, clearData } from '../actions';
+import SearchBar from './search_bar';
 
 class ListItem extends Component {
 	componentDidMount() {
@@ -19,10 +20,13 @@ class ListItem extends Component {
 	render() {
 		if (!this.props.details){
 			return (
-				<div className="row">
-					<div className="col-sm-offset-1 col-sm-10 loading">
-						<h3>Loading...</h3>
-					</div>	
+				<div>
+					<SearchBar searchProps={this.props}/>
+					<div className="row">
+						<div className="col-sm-offset-1 col-sm-10 loading">
+							<h3>Loading...</h3>
+						</div>
+					</div>
 				</div>
 			)
 		}
@@ -31,39 +35,42 @@ class ListItem extends Component {
 
 		return (
 			<div>
-			<div className="row">
-				<Link to="/">Go Back</Link>
-			</div>
-			<div className="row">
-				<div className="col-sm-offset-1 col-sm-10 listingDetails">
-					<div className="row">
-						<div className="col-sm-6 replyUrl">
-							<span>Reply Here: </span>
-							<a target="_blank" href={replyUrl}>{replyUrl}</a>
-						</div>
-						<div className="col-sm-6 posteds">
-							<p><span>Last Updated:</span> {updatedAt}</p>
-							<p><span>Originally Posted:</span> {postedAt}</p>
-						</div>
+				<SearchBar searchProps={this.props}/>
+				<div className="row">
+					<div className="col-sm-offset-1">
+						<Link to="/">Go Back</Link>
 					</div>
-					<div className="row">
-						<div className="col-sm-12 titles">
-							<h2>{title}</h2>
+				</div>
+				<div className="row">
+					<div className="col-sm-offset-1 col-sm-10 listingDetails">
+						<div className="row">
+							<div className="col-sm-6 replyUrl">
+								<span>Reply Here: </span>
+								<a target="_blank" href={replyUrl}>{replyUrl}</a>
+							</div>
+							<div className="col-sm-6 posteds">
+								<p><span>Last Updated:</span> {updatedAt}</p>
+								<p><span>Originally Posted:</span> {postedAt}</p>
+							</div>
 						</div>
-						<div className="col-sm-12 descriptions">
-							{this.renderCleanDescription(description)}
+						<div className="row">
+							<div className="col-sm-12 titles">
+								<h2>{title}</h2>
+							</div>
+							<div className="col-sm-12 descriptions">
+								{this.renderCleanDescription(description)}
+							</div>
 						</div>
-					</div>
-					<div className="row">
-						<div className="col-sm-6 urlLink">
-							<a target="_blank" href={url}><p>{url}</p></a>
-						</div>
-						<div className="col-sm-6 postId">
-							<p><span>Post Id:</span> {pid}</p>
+						<div className="row">
+							<div className="col-sm-6 urlLink">
+								<a target="_blank" href={url}><p>{url}</p></a>
+							</div>
+							<div className="col-sm-6 postId">
+								<p><span>Post Id:</span> {pid}</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 		)
 	}
