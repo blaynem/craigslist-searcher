@@ -19,18 +19,18 @@ After a few seconds, the information will load.
 
 ## Todo
 
-- ~~Add a back button.~~
-- ~~Functionality of search button in description view should work.~~
 - Search bar is correctly redirecting back to home page, but there is slight delay for new info to show. Should clear previous data, or add it on top somehow.
-- ~~Finish adding the rest of the states, cities, and correct city codes.. woo.~~
-- ~~General styling is still to be updated. I just wanted the functionality up and running.~~
 - Fix styling for Mobile.
 - Update styling and make it beautiful.
-- ~~Adding in the ability to click and move to a more detailed view of the specific listing.~~
 - Figuring out how to get the contact information specifically
 - Making it work faster.
 - Searching all of craigslist, hopefully this isn't too hard.
 - Magical graphs for things like getting the average cost of a given vehicle, etc. This will be a lot later down the line. 
+- ~~Add a back button.~~
+- ~~Functionality of search button in description view should work.~~
+- ~~Finish adding the rest of the states, cities, and correct city codes.. woo.~~
+- ~~General styling is still to be updated. I just wanted the functionality up and running.~~
+- ~~Adding in the ability to click and move to a more detailed view of the specific listing.~~
 
 ## Difficulties and things learned.
 
